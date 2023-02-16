@@ -1,6 +1,15 @@
 #include "gtest-1.8.1/gtest.h"
 
+// #include "../src/Periodo.h"
 #include "../src/Funciones.h"
+
+/* Para que puedan los casos de test de este ejercicio realizamos el siguiente cambio en el CMakeLists.txt
+ * Reemplzamos add_executable(ej3 tests/ej3_funciones.cpp
+               src/Funciones.cpp src/Periodo.cpp src/Fecha.cpp src/Periodo.h src/Meses.h src/Funciones.h)
+ * Por add_executable(ej3 tests/ej3_funciones.cpp
+               src/Funciones.cpp)
+ *
+*/
 
 TEST(fecha, ej1_bisiesto) {
  EXPECT_FALSE(esBisiesto(1));
