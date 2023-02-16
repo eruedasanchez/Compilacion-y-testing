@@ -1,7 +1,10 @@
 #include "gtest-1.8.1/gtest.h"
 
-#include "../src/Fecha.cpp"
+// #include "../src/Fecha.cpp"
 #include "../src/Periodo.h"
+
+/* En este caso, para que compilen los casos de tests reemplazamos #include "../src/Fecha.cpp" por #include "../src/Periodo.cpp" */
+
 
 TEST(fecha, periodo) {
   Periodo p(1, 2, 3);
