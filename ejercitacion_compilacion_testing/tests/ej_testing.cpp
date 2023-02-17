@@ -21,13 +21,22 @@ TEST(Aritmetica, potencia){
 }
 
 /* Ejercicio 6 */
+TEST(Aritmetica, potencia_general){
+    for (int i = -5; i <= 5; i++) {
+        if (i != 0) {
+            EXPECT_EQ(pow(i, 2), i * i);
+        }
+    }
+}
+
+/* Ejercicio 7 */
 TEST(Diccionario, obtener){
     map<int, int> dicc = map<int, int>({{1, 7}, {2, 5}, {3, 8}});
     EXPECT_EQ(dicc[2], 5);
 
 }
 
-/* Ejercicio 7 */
+/* Ejercicio 8 */
 TEST(Diccionario, definir){
     map<int, int> dicc = map<int, int>({{1, 7}, {2, 5}, {3, 8}});
     int definidaClaveOcho = dicc.count(8);
@@ -38,9 +47,31 @@ TEST(Diccionario, definir){
     EXPECT_EQ(definidaClaveOcho, 1);
 }
 
+/* Ejercicio 9 */
+TEST(Truco, inicio){
+    Truco t;
+    EXPECT_EQ(t.puntaje_j1(), 0);
+    EXPECT_EQ(t.puntaje_j2(), 0);
+}
+
+/* Ejercicio 10 */
+TEST(Truco, buenas){
+    Truco t;
+    EXPECT_EQ(t.puntaje_j1(), 0);
+    EXPECT_FALSE(t.buenas(1));
+
+    for(int i = 0; i < 15; i++){
+        t.sumar_punto(1);
+    }
+    EXPECT_EQ(t.puntaje_j1(), 15);
+    EXPECT_FALSE(t.buenas(1));
+
+    t.sumar_punto(1);
+    EXPECT_TRUE(t.buenas(1));
+
+    t.sumar_punto(1);
+    t.sumar_punto(1);
+    EXPECT_TRUE(t.buenas(1));
+}
 
 
-
-/* Ejercicio 8 */
-
-/* Ejercicios 9 */
